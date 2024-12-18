@@ -1,0 +1,327 @@
+/* Thanh điều hướng */
+nav {
+    display: flex;
+    justify-content: space-between; /* Phân chia không gian giữa hai nhóm */
+    align-items: center;
+    background-color: #333; /* Màu nền của thanh điều hướng */
+    padding: 10px 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none; /* Loại bỏ dấu chấm đầu dòng */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px; /* Khoảng cách giữa các mục */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #ff6347; /* Thay đổi màu khi hover */
+}
+
+nav .user-info {
+    display: flex;
+    align-items: center; /* Căn giữa nội dung trong user-info */
+}
+
+nav .user-info a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px; /* Khoảng cách giữa các liên kết */
+}
+
+nav .user-info .account-icon img {
+    width: 30px;
+    height: 30px;
+}
+/* Thùng chứa banner */
+.banner-container {
+    position: relative;
+    display: flex;
+    justify-content: center;  /* Căn giữa ảnh theo chiều ngang */
+    align-items: center;      /* Căn giữa ảnh theo chiều dọc */
+    width: 100%;              /* Chiều rộng của thùng chứa */
+    height: 400px;            /* Chiều cao của thùng chứa */
+    overflow: hidden;         /* Ẩn các phần vượt quá của ảnh */
+}
+
+/* Các ảnh banner sẽ được di chuyển liên tục */
+.banner-images {
+    display: flex;            /* Xếp các ảnh thành một dòng */
+    transition: transform 0.5s ease-in-out;
+    width: 300%;              /* Tổng chiều rộng của tất cả các ảnh */
+    animation: slide 0s linear infinite; /* Tạo hiệu ứng cuộn liên tục */
+}
+
+.banner-image {
+    width: 100vw;             /* Mỗi ảnh chiếm toàn bộ màn hình */
+    height: 100%;
+    object-fit: cover;        /* Đảm bảo ảnh không bị méo mà vẫn đầy đủ */
+}
+
+/* Animation để cuộn ảnh từ trái sang phải */
+@keyframes slide {
+    0% {
+        transform: translateX(0); /* Bắt đầu từ vị trí ban đầu */
+    }
+    100% {
+        transform: translateX(-100%); /* Cuộn hết một vòng */
+    }
+}
+
+/* Nút mũi tên */
+.prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Căn giữa theo chiều dọc */
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền trong suốt */
+    color: white;                /* Màu chữ */
+    font-size: 30px;             /* Kích thước chữ */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;                 /* Đảm bảo nút xuất hiện trên ảnh */
+}
+
+.prev-button {
+    left: 10px;                 /* Nút mũi tên trái */
+}
+
+.next-button {
+    right: 10px;                /* Nút mũi tên phải */
+}
+
+/* Căn giữa giao diện đặt vé */
+.booking-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.booking-section form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.booking-section input, .booking-section button {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Cập nhật các chuyến bay để hiển thị thành 4 cột */
+.flights-section .flights, .discounted-flights .flights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cột */
+    gap: 20px;
+    padding: 20px;
+    
+}
+
+/* Thẻ chuyến bay */
+.flight {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex; /* Sử dụng flexbox để căn chỉnh nội dung bên trong */
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Hiệu ứng cho hình ảnh sản phẩm (Chuyến bay) khi hover */
+.flight img {
+    width: 100%;
+    height: 60%; /* Chiếm khoảng 60% chiều cao của thẻ */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+    border-radius: 8px 8px 0 0; /* Bo góc trên của ảnh */
+    transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển động khi hover */
+}
+
+.flight img:hover {
+    transform: scale(1.1); /* Phóng to hình ảnh lên 10% khi hover */
+}
+
+
+/* Thông tin chuyến bay */
+.flight-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40%; /* Chiếm 40% còn lại của thẻ */
+}
+
+/* Thông tin chuyến bay bên trái */
+.flight-info .info {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Nút đặt vé bên phải */
+.flight-info .book-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    margin-left: auto; /* Đẩy nút về bên phải */
+    margin-top: auto;  /* Đẩy nút xuống cuối */
+}
+
+/* Đảm bảo hiển thị đầy đủ thông tin trong các cột */
+.flight-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* Hiển thị tất cả các thông tin mà không bị cắt */
+.flight-info p {
+    margin: 5px 0;
+    word-wrap: break-word;
+}
+
+/* Đảm bảo tất cả thẻ đều có chiều cao ổn định */
+.flight {
+    height: 350px; /* Cố định chiều cao cho mỗi thẻ */
+}
+
+/* Căn giữa tiêu đề h2 */
+.flights-section h2,
+.discounted-flights h2 {
+    text-align: center; /* Căn giữa theo chiều ngang */
+    
+}
+
+/* Container chứa phiếu mã giảm giá */
+.discounted-flights {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* Chia thành 4 cột */
+.coupons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Chia thành 4 cột */
+    gap: 20px; /* Khoảng cách giữa các cột */
+}
+
+/* Thẻ phiếu mã giảm giá */
+.coupon {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px; /* Chiều cao của mỗi thẻ */
+}
+
+/* Thông tin phiếu */
+.coupon-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16px;
+}
+
+/* Mã giảm giá */
+.coupon-code {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+/* Biểu tượng sao chép */
+.copy-icon {
+    font-size: 24px;
+    color: #4CAF50;
+    cursor: pointer;
+    margin-left: 10px; /* Khoảng cách giữa mã giảm giá và icon */
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-container .contact-info,
+.footer-container .partners,
+.footer-container .payment-partners {
+    flex: 1;
+    margin: 10px;
+}
+
+footer h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 5px 0;
+}
+
+footer .partner-logos,
+footer .payment-logos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer .partner-logo,
+footer .payment-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin: 5px;
+}
+
+footer .partner-logo:hover,
+footer .payment-logo:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 14px;
+}

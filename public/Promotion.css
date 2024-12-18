@@ -1,0 +1,229 @@
+/* Giao diện cơ bản */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    padding: 5px 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.user-info {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.user-info li {
+    padding: 5px 10px;
+}
+
+.user-info .login, .user-info .logout {
+    color: white;
+    text-decoration: none;
+}
+
+.user-info .logout:hover, .user-info .login:hover {
+    color: #ff6f61;
+}
+
+/* Quản lý phiếu giảm giá */
+.home-section {
+    padding: 20px;
+}
+
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Thiết lập một số kiểu cho các phần trong trang */
+.home-section {
+    padding: 20px;
+}
+/* Thiết lập lại phần .discount-list */
+.discount-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Giữ khoảng cách giữa các phiếu giảm giá */
+    justify-content: flex-start; /* Đảm bảo các phiếu giảm giá căn trái */
+}
+
+/* Điều chỉnh các thẻ .discount-card để chiếm không gian đều */
+.discount-card {
+    width: 22%; /* Điều chỉnh chiều rộng phiếu giảm giá cho phù hợp */
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.discount-card:hover {
+    transform: translateY(-10px); /* Hiệu ứng đẩy thẻ lên khi hover */
+}
+
+.discount-info {
+    margin-bottom: 15px;
+}
+
+.discount-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.discount-actions .edit-btn, .discount-actions .delete-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.discount-actions .edit-btn:hover, .discount-actions .delete-btn:hover {
+    background-color: #0056b3;
+}
+
+.discount-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.discount-card p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.discount-card .fa-tag {
+    font-size: 24px;
+    color: #ff6347;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-container .contact-info,
+.footer-container .partners,
+.footer-container .payment-partners {
+    flex: 1;
+    margin: 10px;
+}
+
+footer h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 5px 0;
+}
+
+footer .partner-logos,
+footer .payment-logos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer .partner-logo,
+footer .payment-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin: 5px;
+}
+
+footer .partner-logo:hover,
+footer .payment-logo:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 14px;
+}

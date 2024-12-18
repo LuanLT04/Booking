@@ -1,0 +1,231 @@
+/* Giao diện cơ bản */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    padding: 5px 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.user-info {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.user-info li {
+    padding: 5px 10px;
+}
+
+.user-info .login, .user-info .logout {
+    color: white;
+    text-decoration: none;
+}
+
+.user-info .logout:hover, .user-info .login:hover {
+    color: #ff6f61;
+}
+
+/* Statistics Section */
+.statistics {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.statistics h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.user-count {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.count {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+}
+
+
+/* Nút duyệt */
+.approve-btn {
+    background-color: #4CAF50; /* Màu xanh lá */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.approve-btn:hover {
+    background-color: #45a049; /* Màu xanh đậm khi hover */
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+/* Nút xóa */
+.delete-btn {
+    background-color: #f44336; /* Màu đỏ */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f; /* Màu đỏ đậm khi hover */
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+/* Giao diện cơ bản */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Dùng flex để đảm bảo phần footer luôn ở cuối */
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    min-height: 100vh; /* Đảm bảo chiều cao tối thiểu là 100% chiều cao của viewport */
+}
+
+/* Phần nội dung chính chiếm không gian còn lại */
+.home-section {
+    flex-grow: 1; /* Phần này sẽ chiếm không gian còn lại */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-container .contact-info,
+.footer-container .partners,
+.footer-container .payment-partners {
+    flex: 1;
+    margin: 10px;
+}
+
+footer h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 5px 0;
+}
+
+footer .partner-logos,
+footer .payment-logos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer .partner-logo,
+footer .payment-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin: 5px;
+}
+
+footer .partner-logo:hover,
+footer .payment-logo:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 14px;
+}
